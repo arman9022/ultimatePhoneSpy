@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title Here</title>
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <style>
+      @media screen and (min-width: 399px) and (max-width: 599px) {
+        .menu {
+          padding-right: 20px;
+          cursor: pointer;
+        }
+        .nav__link a {
+          display: block;
+          text-align: center;
+        }
+        .nav__link a:hover {
+          background-color: lightcoral;
+        }
+        .hide {
+          display: none;
+        }
+        .side2{
+          border-radius: 0 !important;
+        }
+        .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+            --bs-gutter-x: 0;
+        }
+      }
+
+      @media screen and (min-width: 1200px) and (max-width: 1441px) {
+
+        .nav__link {
+          display: block;
+          position: static;
+          background: none;
+        }
+        .menu {
+          display: none;
+        }
+
+        .navbar-brand{padding-left: 19rem;}
+      }
+
+      @media screen and (min-width: 1442px) and (max-width: 1921px) {
+
+        .nav__link {
+          display: block;
+          position: static;
+          background: none;
+        }
+        .menu {
+          display: none;
+        }
+
+        .navbar-brand{padding-left: 30rem;}
+      }
+
+      @media screen and (min-width: 1919px) and (max-width: 2561px) {
+
+        .nav__link {
+          display: block;
+          position: static;
+          background: none;
+        }
+        .menu {
+          display: none;
+        }
+
+        .topMenuBar{
+          padding-left: 62px; 
+          padding-right: 99px;
+        }
+        .sideBar{
+          width: 300px;
+          /* background: black; */
+        }
+        .content{
+          width: 1610px;
+          padding-left: 62px; 
+          padding-right: 99px;
+          /* background: red; */
+        }
+        .navbar-brand{
+          padding-left: 240px;
+        }
+        .bi{
+          padding-right: 17px;
+        }
+        .searchSection{
+          width: 415px;
+        }
+      }
+
+      /* @media screen and (min-width: 600px) and (max-width: 1921px) {
+
+        .nav__link {
+          display: block;
+          position: static;
+          background: none;
+        }
+        .menu {
+          display: none;
+        }
+
+      } */
+
+
+
+    </style>
+  </head>
+  <body style="background: #E4E4E4;">
+
+    <!-- <section  style="background: #2C294B;">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-end">
+            <div class="menu">
+              <i class="bi bi-list text-white fs-1"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section  style="background: #2C294B;">
+      <style>
+        .line{
+          width: 40px;
+          height: 3px;
+          background: white;
+          display: block;
+          margin-bottom: 10px;
+          transition: all .3s ease;
+        }
+        .menu-btn{
+          margin-top: 20px;
+          right: 5px;
+          margin-left: 50px;
+          /* position: absolute; */
+        }
+        .active .line:nth-child(2){
+          opacity: 0;
+        }
+        .active .line:nth-child(1){
+          transform: translateY(13px) rotate(45deg);
+          transition: all .3s ease;
+        }
+        .active .line:nth-child(3){
+          transform: translateY(-13px) rotate(-45deg);
+          transition: all .3s ease;
+        }
+      </style>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-end">
+            <div class="menu menu-btn">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        document.querySelector('.menu-btn').addEventListener('click',function(){
+          document.querySelector('.menu-btn').classList.toggle('active');
+        });
+      </script>
+    </section>
+
+    
+    <section style="background: #2C294B;" class="py-5 topMenuBar">
+
+      <div class="container-fluid px-0 ps-5 py-xl-5 py-3">
+        <nav class="navbar navbar-expand-lg navbar-dark py-xl-5 py-0" style="padding-left: 0rem;">
+          <div class="container-fluid">
+
+            <a class="navbar-brand" href="#">
+              <div class="row">
+                <div class="col-12">
+                  <div class="row text-start">
+                    <span style="font-size: 28px; color: white;">Dashboard</span>
+                  </div>
+                  <div class="row text-start">
+                    <span style="font-size: 18px; color: white;">Device info: Samsung S22 Ultra</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <!-- <button class="navbar-toggler open-btn" type="button"><i class="bi bi-list"></i></button> -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <form class="d-flex searchSection" role="search">
+                  <input class="form-control text-white me-2 px-5 py-0" style="background: #403E5D; border: none;" type="search" placeholder="Search for data and reports" aria-label="Search">
+                </form>
+
+                <li class="nav-item" style="width: 62px; height: 62px; background: #403E5D; border-radius: 100%;"><a class="nav-link btn btn-outline-info text-center" style="border-radius: 100%;border: none;" href="#"><i class="bi bi-bell fs-2"></i></a></li>
+                <li class="nav-item mx-2" style="width: 62px; height: 62px; background: #403E5D; border-radius: 100%;"><a class="nav-link btn btn-outline-info  text-center" style="border-radius: 100%;border: none;" href="#"><i class="bi bi-chat-dots fs-2"></i></a></li>
+                <li class="nav-item" style="width: 62px; height: 62px; background: #403E5D; border-radius: 100%;"><a class="nav-link btn btn-outline-info  text-center" style="border-radius: 100%;border: none;" href="#"><i class="bi bi-envelope fs-2"></i></a></li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link active btn btn-outline-info py-2 px-2" style="border-radius: 3rem; border: 1px solid #9290aa;" href="#">
+                    <div class="row">
+                      <div class="col-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46" height="46" viewBox="0 0 46 46">
+                          <defs>
+                            <pattern id="pattern" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 250 250">
+                              <image width="250" height="250" xlink:href="data:image/jpeg;base64,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"/>
+                            </pattern>
+                          </defs>
+                          <circle id="Ellipse_141" data-name="Ellipse 141" cx="23" cy="23" r="23" fill="url(#pattern)"/>
+                        </svg> 
+                      </div>
+                      <div class="col-8">
+                        <div class="row text-start">
+                          <span style="font-weight: bold; font-size: 16px; color: white;">Etan Castro</span>
+                        </div>
+                        <div class="row text-start">
+                          <span style="font-weight: bold; font-size: 14px; color: white;">View Profile</span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </a>
+                </li>
+
+                <!-- <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </li> -->
+
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <section class="">
+      <style>
+        .sideMenuText{
+          color: #bbbbbb;
+          font-size: 18px; 
+          text-decoration: none;
+          cursor: pointer;
+          font-weight: 400;
+        }
+        .sideMenuText:hover{
+          color: rgb(0, 0, 0);
+        }
+        .sideMenuText.active{
+          color: rgb(0, 0, 0);
+        }
+      </style>
+      <div class="container-fluid">
+        <div class="row py-5">
+          <div class="sideBar col-xl-3 col-lg-4 col-md-4 ps-0 nav__link hide">
+              <div class="side2" style="width: 100%; background: white; border-top-right-radius: 2rem;margin-top: -250px; ">
+                <div class="row">
+                  <div class="col-12 pt-xl-5 pt-0">
+                    <a class="p-5" href="" style="font-size: 32px; text-decoration: none;"></a>
+                  </div>
+                </div>
+  
+                <div class="row px-5 pb-3"><div class="col-12 pt-5"><a class="sideMenuText" href="index.html"><i class="bi bi-grid"></i> Dashboard</a></div></div>
+                <div class="row px-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href=""><i class="bi bi-tablet"></i> Device Info</a></div></div>
+                <div class="row px-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText active" href="call_history.html"><i class="bi bi-telephone-outbound"></i> Call History</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href=""><i class="bi bi-chat-left-text"></i> SMS History</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href=""><i class="bi bi-journal-medical"></i> Address Book</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href=""><i class="bi bi-grid"></i> GPS Location</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href=""><i class="bi bi-clock"></i> IP Locations</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href=""><i class="bi bi-image"></i> Images</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href=""><i class="bi bi-tv"></i> Video Files</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href=""><i class="bi bi-music-note-beamed"></i> Audio Files</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href=""><i class="bi bi-file-earmark-medical"></i> Documents</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href=""><i class="bi bi-grid"></i> Browser History</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href=""><i class="bi bi-bookmark"></i> Browser Bookmarks</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href=""><i class="bi bi-chat"></i> Social Apps</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href=""><i class="bi bi-grid"></i> Applications</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href=""><i class="bi bi-calendar"></i> Event Calendar</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href=""><i class="bi bi-wifi"></i> Wifi Network</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href=""><i class="bi bi-key"></i> Key Logger</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href=""><i class="bi bi-clipboard"></i> Clipboard Logs</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href=""><i class="bi bi-sim"></i> Sim Changes</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href=""><i class="bi bi-person"></i> Account</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href=""><i class="bi bi-clock-history"></i> Email History</a></div></div>
+                <div class="row ps-5 pb-5"><div class="col-12 pt-3"><a class="sideMenuText" href=""><i class="bi bi-inboxes"></i> Data Export</a></div></div>
+  
+              </div>
+          </div>
+
+          <div class="content col-xl-9 col-lg-8 col-md-8 col-md-12">
+
+            <div class="row" style="margin-top: -150px;">
+              
+              <div class="col-xl-12">
+
+                <div class="" style="background: white; border-radius: 1rem; padding-top: 30px; padding-left: 40px; padding-right: 40px; padding-bottom: 30px;">
+                  <div class="row">
+
+                    <div class="col-12">
+                      <div class="row" style="background: #ffffff; height: 86px; width: 1390px;">
+                        <div class="align-self-center" style="padding-left: 35px; width: 190px;">
+                          <span style="color: #009EF7; font-weight: bold;font-size: 20px;">Type</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 365px;">
+                          <span style="color: #009EF7; font-weight: bold;font-size: 20px;">Person</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 260px;">
+                          <span style="color: #009EF7; font-weight: bold;font-size: 20px;">Number</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 265px;">
+                          <span style="color: #009EF7; font-weight: bold;font-size: 20px;">Duration</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 275px;">
+                          <span style="color: #009EF7; font-weight: bold;font-size: 20px;">Date & Time</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="row" style="background: #F8F8F8; height: 86px; width: 1390px;">
+                        <div class="align-self-center" style="padding-left: 35px; width: 190px;">
+                          <svg id="phone-pause" xmlns="http://www.w3.org/2000/svg" width="24.365" height="24.365" viewBox="0 0 24.365 24.365">
+                            <path id="Path_9693" data-name="Path 9693" d="M0,0H24.365V24.365H0Z" fill="none"/>
+                            <path id="Path_9694" data-name="Path 9694" d="M5.03,4H9.091l2.03,5.076L8.584,10.6a11.167,11.167,0,0,0,5.076,5.076l1.523-2.538,5.076,2.03v4.061a2.03,2.03,0,0,1-2.03,2.03A16.243,16.243,0,0,1,3,6.03,2.03,2.03,0,0,1,5.03,4" transform="translate(0.046 0.061)" fill="#009ef7"/>
+                            <path id="Icon_ionic-ios-arrow-round-up" data-name="Icon ionic-ios-arrow-round-up" d="M5.627,3.117a.39.39,0,0,1-.55,0L3.258,1.306V8.217a.388.388,0,0,1-.777,0V1.306L.661,3.122a.393.393,0,0,1-.55,0,.387.387,0,0,1,0-.547L2.595.111h0A.436.436,0,0,1,2.717.03.371.371,0,0,1,2.866,0a.389.389,0,0,1,.272.111l2.48,2.462A.381.381,0,0,1,5.627,3.117Z" transform="translate(16.235 12.083) rotate(-135)" fill="#5fec6d"/>
+                          </svg>
+                          <span style="font-size: 20px;">Incoming</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 365px;">
+                          <span style="font-size: 20px;">Jessika Cox Anderson</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 260px;">
+                          <span style="font-size: 20px;">+1(702)452-5559</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 265px;">
+                          <span style="font-size: 20px;">6 min. 27 sec.</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 275px;">
+                          <span style="font-size: 20px;">22 Jan 2014 23:23</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="row" style="background: #ffffff; height: 86px; width: 1390px;">
+                        <div class="align-self-center" style="padding-left: 35px; width: 190px;">
+                          <svg id="phone-pause" xmlns="http://www.w3.org/2000/svg" width="24.365" height="24.365" viewBox="0 0 24.365 24.365">
+                            <path id="Path_9693" data-name="Path 9693" d="M0,0H24.365V24.365H0Z" fill="none"/>
+                            <path id="Path_9694" data-name="Path 9694" d="M5.03,4H9.091l2.03,5.076L8.584,10.6a11.167,11.167,0,0,0,5.076,5.076l1.523-2.538,5.076,2.03v4.061a2.03,2.03,0,0,1-2.03,2.03A16.243,16.243,0,0,1,3,6.03,2.03,2.03,0,0,1,5.03,4" transform="translate(0.046 0.061)" fill="#009ef7"/>
+                            <path id="Icon_ionic-ios-arrow-round-up" data-name="Icon ionic-ios-arrow-round-up" d="M5.627,3.117a.39.39,0,0,1-.55,0L3.258,1.306V8.217a.388.388,0,0,1-.777,0V1.306L.661,3.122a.393.393,0,0,1-.55,0,.387.387,0,0,1,0-.547L2.595.111h0A.436.436,0,0,1,2.717.03.371.371,0,0,1,2.866,0a.389.389,0,0,1,.272.111l2.48,2.462A.381.381,0,0,1,5.627,3.117Z" transform="translate(18.26 1.943) rotate(45)" fill="#2c294b"/>
+                          </svg>                          
+                          <span style="font-size: 20px;">Outgoing</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 365px;">
+                          <span style="font-size: 20px;">Jessika Cox Anderson</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 260px;">
+                          <span style="font-size: 20px;">+1(702)452-5559</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 265px;">
+                          <span style="font-size: 20px;">6 min. 27 sec.</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 275px;">
+                          <span style="font-size: 20px;">22 Jan 2014 23:23</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="row" style="background: #F8F8F8; height: 86px; width: 1390px;">
+                        <div class="align-self-center" style="padding-left: 35px; width: 190px;">
+                          <svg id="phone-pause" xmlns="http://www.w3.org/2000/svg" width="24.365" height="24.365" viewBox="0 0 24.365 24.365">
+                            <path id="Path_9693" data-name="Path 9693" d="M0,0H24.365V24.365H0Z" fill="none"/>
+                            <path id="Path_9694" data-name="Path 9694" d="M5.03,4H9.091l2.03,5.076L8.584,10.6a11.167,11.167,0,0,0,5.076,5.076l1.523-2.538,5.076,2.03v4.061a2.03,2.03,0,0,1-2.03,2.03A16.243,16.243,0,0,1,3,6.03,2.03,2.03,0,0,1,5.03,4" transform="translate(0.046 0.061)" fill="#009ef7"/>
+                            <path id="Icon_ionic-ios-arrow-round-up" data-name="Icon ionic-ios-arrow-round-up" d="M5.627,3.117a.39.39,0,0,1-.55,0L3.258,1.306V8.217a.388.388,0,0,1-.777,0V1.306L.661,3.122a.393.393,0,0,1-.55,0,.387.387,0,0,1,0-.547L2.595.111h0A.436.436,0,0,1,2.717.03.371.371,0,0,1,2.866,0a.389.389,0,0,1,.272.111l2.48,2.462A.381.381,0,0,1,5.627,3.117Z" transform="translate(16.235 12.083) rotate(-135)" fill="#ff7d7d"/>
+                          </svg>
+                          <span style="font-size: 20px;">Missed</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 365px;">
+                          <span style="font-size: 20px;">Jessika Cox Anderson</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 260px;">
+                          <span style="font-size: 20px;">+1(702)452-5559</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 265px;">
+                          <span style="font-size: 20px;">6 min. 27 sec.</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 275px;">
+                          <span style="font-size: 20px;">22 Jan 2014 23:23</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="row" style="background: #ffffff; height: 86px; width: 1390px;">
+                        <div class="align-self-center" style="padding-left: 35px; width: 190px;">
+                          <svg id="phone-pause" xmlns="http://www.w3.org/2000/svg" width="24.365" height="24.365" viewBox="0 0 24.365 24.365">
+                            <path id="Path_9693" data-name="Path 9693" d="M0,0H24.365V24.365H0Z" fill="none"/>
+                            <path id="Path_9694" data-name="Path 9694" d="M5.03,4H9.091l2.03,5.076L8.584,10.6a11.167,11.167,0,0,0,5.076,5.076l1.523-2.538,5.076,2.03v4.061a2.03,2.03,0,0,1-2.03,2.03A16.243,16.243,0,0,1,3,6.03,2.03,2.03,0,0,1,5.03,4" transform="translate(0.046 0.061)" fill="#009ef7"/>
+                            <path id="Icon_ionic-ios-arrow-round-up" data-name="Icon ionic-ios-arrow-round-up" d="M5.627,3.117a.39.39,0,0,1-.55,0L3.258,1.306V8.217a.388.388,0,0,1-.777,0V1.306L.661,3.122a.393.393,0,0,1-.55,0,.387.387,0,0,1,0-.547L2.595.111h0A.436.436,0,0,1,2.717.03.371.371,0,0,1,2.866,0a.389.389,0,0,1,.272.111l2.48,2.462A.381.381,0,0,1,5.627,3.117Z" transform="translate(16.235 12.083) rotate(-135)" fill="#5fec6d"/>
+                          </svg>                        
+                          <span style="font-size: 20px;">Incoming</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 365px;">
+                          <span style="font-size: 20px;">Jessika Cox Anderson</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 260px;">
+                          <span style="font-size: 20px;">+1(702)452-5559</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 265px;">
+                          <span style="font-size: 20px;">6 min. 27 sec.</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 275px;">
+                          <span style="font-size: 20px;">22 Jan 2014 23:23</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="row" style="background: #F8F8F8; height: 86px; width: 1390px;">
+                        <div class="align-self-center" style="padding-left: 35px; width: 190px;">
+                          <svg id="phone-pause" xmlns="http://www.w3.org/2000/svg" width="24.365" height="24.365" viewBox="0 0 24.365 24.365">
+                            <path id="Path_9693" data-name="Path 9693" d="M0,0H24.365V24.365H0Z" fill="none"/>
+                            <path id="Path_9694" data-name="Path 9694" d="M5.03,4H9.091l2.03,5.076L8.584,10.6a11.167,11.167,0,0,0,5.076,5.076l1.523-2.538,5.076,2.03v4.061a2.03,2.03,0,0,1-2.03,2.03A16.243,16.243,0,0,1,3,6.03,2.03,2.03,0,0,1,5.03,4" transform="translate(0.046 0.061)" fill="#009ef7"/>
+                            <path id="Icon_ionic-ios-arrow-round-up" data-name="Icon ionic-ios-arrow-round-up" d="M5.627,3.117a.39.39,0,0,1-.55,0L3.258,1.306V8.217a.388.388,0,0,1-.777,0V1.306L.661,3.122a.393.393,0,0,1-.55,0,.387.387,0,0,1,0-.547L2.595.111h0A.436.436,0,0,1,2.717.03.371.371,0,0,1,2.866,0a.389.389,0,0,1,.272.111l2.48,2.462A.381.381,0,0,1,5.627,3.117Z" transform="translate(16.235 12.083) rotate(-135)" fill="#ff7d7d"/>
+                          </svg>
+                          <span style="font-size: 20px;">Missed</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 365px;">
+                          <span style="font-size: 20px;">Jessika Cox Anderson</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 260px;">
+                          <span style="font-size: 20px;">+1(702)452-5559</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 265px;">
+                          <span style="font-size: 20px;">6 min. 27 sec.</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 275px;">
+                          <span style="font-size: 20px;">22 Jan 2014 23:23</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="row" style="background: #ffffff; height: 86px; width: 1390px;">
+                        <div class="align-self-center" style="padding-left: 35px; width: 190px;">
+                          <svg id="phone-pause" xmlns="http://www.w3.org/2000/svg" width="24.365" height="24.365" viewBox="0 0 24.365 24.365">
+                            <path id="Path_9693" data-name="Path 9693" d="M0,0H24.365V24.365H0Z" fill="none"/>
+                            <path id="Path_9694" data-name="Path 9694" d="M5.03,4H9.091l2.03,5.076L8.584,10.6a11.167,11.167,0,0,0,5.076,5.076l1.523-2.538,5.076,2.03v4.061a2.03,2.03,0,0,1-2.03,2.03A16.243,16.243,0,0,1,3,6.03,2.03,2.03,0,0,1,5.03,4" transform="translate(0.046 0.061)" fill="#009ef7"/>
+                            <path id="Icon_ionic-ios-arrow-round-up" data-name="Icon ionic-ios-arrow-round-up" d="M5.627,3.117a.39.39,0,0,1-.55,0L3.258,1.306V8.217a.388.388,0,0,1-.777,0V1.306L.661,3.122a.393.393,0,0,1-.55,0,.387.387,0,0,1,0-.547L2.595.111h0A.436.436,0,0,1,2.717.03.371.371,0,0,1,2.866,0a.389.389,0,0,1,.272.111l2.48,2.462A.381.381,0,0,1,5.627,3.117Z" transform="translate(16.235 12.083) rotate(-135)" fill="#5fec6d"/>
+                          </svg>                         
+                          <span style="font-size: 20px;">Incoming</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 365px;">
+                          <span style="font-size: 20px;">Jessika Cox Anderson</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 260px;">
+                          <span style="font-size: 20px;">+1(702)452-5559</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 265px;">
+                          <span style="font-size: 20px;">6 min. 27 sec.</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 275px;">
+                          <span style="font-size: 20px;">22 Jan 2014 23:23</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="row" style="background: #F8F8F8; height: 86px; width: 1390px;">
+                        <div class="align-self-center" style="padding-left: 35px; width: 190px;">
+                          <svg id="phone-pause" xmlns="http://www.w3.org/2000/svg" width="24.365" height="24.365" viewBox="0 0 24.365 24.365">
+                            <path id="Path_9693" data-name="Path 9693" d="M0,0H24.365V24.365H0Z" fill="none"/>
+                            <path id="Path_9694" data-name="Path 9694" d="M5.03,4H9.091l2.03,5.076L8.584,10.6a11.167,11.167,0,0,0,5.076,5.076l1.523-2.538,5.076,2.03v4.061a2.03,2.03,0,0,1-2.03,2.03A16.243,16.243,0,0,1,3,6.03,2.03,2.03,0,0,1,5.03,4" transform="translate(0.046 0.061)" fill="#009ef7"/>
+                            <path id="Icon_ionic-ios-arrow-round-up" data-name="Icon ionic-ios-arrow-round-up" d="M5.627,3.117a.39.39,0,0,1-.55,0L3.258,1.306V8.217a.388.388,0,0,1-.777,0V1.306L.661,3.122a.393.393,0,0,1-.55,0,.387.387,0,0,1,0-.547L2.595.111h0A.436.436,0,0,1,2.717.03.371.371,0,0,1,2.866,0a.389.389,0,0,1,.272.111l2.48,2.462A.381.381,0,0,1,5.627,3.117Z" transform="translate(16.235 12.083) rotate(-135)" fill="#ff7d7d"/>
+                          </svg>
+                          <span style="font-size: 20px;">Missed</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 365px;">
+                          <span style="font-size: 20px;">Jessika Cox Anderson</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 260px;">
+                          <span style="font-size: 20px;">+1(702)452-5559</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 265px;">
+                          <span style="font-size: 20px;">6 min. 27 sec.</span>
+                        </div>
+                        <div class="align-self-center" style="padding-left: 35px; width: 275px;">
+                          <span style="font-size: 20px;">22 Jan 2014 23:23</span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+    <script>
+      const menu = document.querySelector('.menu');
+      const navLink = document.querySelector('.nav__link');
+
+      menu.addEventListener('click', () => {
+        navLink.classList.toggle('hide');
+      });
+    </script>
+
+  </body>
+</html>

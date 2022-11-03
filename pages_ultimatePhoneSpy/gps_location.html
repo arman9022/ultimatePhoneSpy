@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title Here</title>
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <style>
+      @media screen and (min-width: 399px) and (max-width: 599px) {
+        .menu {
+          padding-right: 20px;
+          cursor: pointer;
+        }
+        .nav__link a {
+          display: block;
+          text-align: center;
+        }
+        .nav__link a:hover {
+          background-color: lightcoral;
+        }
+        .hide {
+          display: none;
+        }
+        .side2{
+          border-radius: 0 !important;
+        }
+        .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+            --bs-gutter-x: 0;
+        }
+      }
+
+      @media screen and (min-width: 1200px) and (max-width: 1441px) {
+
+        .nav__link {
+          display: block;
+          position: static;
+          background: none;
+        }
+        .menu {
+          display: none;
+        }
+
+        .navbar-brand{padding-left: 19rem;}
+      }
+
+      @media screen and (min-width: 1442px) and (max-width: 1921px) {
+
+        .nav__link {
+          display: block;
+          position: static;
+          background: none;
+        }
+        .menu {
+          display: none;
+        }
+
+        .navbar-brand{padding-left: 30rem;}
+      }
+
+      @media screen and (min-width: 1919px) and (max-width: 2561px) {
+
+        .nav__link {
+          display: block;
+          position: static;
+          background: none;
+        }
+        .menu {
+          display: none;
+        }
+
+        .topMenuBar{
+          padding-left: 62px; 
+          padding-right: 99px;
+        }
+        .sideBar{
+          width: 300px;
+          /* background: black; */
+        }
+        .content{
+          width: 1610px;
+          padding-left: 62px; 
+          padding-right: 99px;
+          /* background: red; */
+        }
+        .navbar-brand{
+          padding-left: 240px;
+        }
+        .bi{
+          padding-right: 17px;
+        }
+        .searchSection{
+          width: 415px;
+        }
+      }
+
+      /* @media screen and (min-width: 600px) and (max-width: 1921px) {
+
+        .nav__link {
+          display: block;
+          position: static;
+          background: none;
+        }
+        .menu {
+          display: none;
+        }
+
+      } */
+
+
+
+    </style>
+  </head>
+  <body style="background: #E4E4E4;">
+
+    <!-- <section  style="background: #2C294B;">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-end">
+            <div class="menu">
+              <i class="bi bi-list text-white fs-1"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section  style="background: #2C294B;">
+      <style>
+        .line{
+          width: 40px;
+          height: 3px;
+          background: white;
+          display: block;
+          margin-bottom: 10px;
+          transition: all .3s ease;
+        }
+        .menu-btn{
+          margin-top: 20px;
+          right: 5px;
+          margin-left: 50px;
+          /* position: absolute; */
+        }
+        .active .line:nth-child(2){
+          opacity: 0;
+        }
+        .active .line:nth-child(1){
+          transform: translateY(13px) rotate(45deg);
+          transition: all .3s ease;
+        }
+        .active .line:nth-child(3){
+          transform: translateY(-13px) rotate(-45deg);
+          transition: all .3s ease;
+        }
+      </style>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-end">
+            <div class="menu menu-btn">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        document.querySelector('.menu-btn').addEventListener('click',function(){
+          document.querySelector('.menu-btn').classList.toggle('active');
+        });
+      </script>
+    </section>
+
+    
+    <section style="background: #2C294B;" class="py-5 topMenuBar">
+
+      <div class="container-fluid px-0 ps-5 py-xl-5 py-3">
+        <nav class="navbar navbar-expand-lg navbar-dark py-xl-5 py-0" style="padding-left: 0rem;">
+          <div class="container-fluid">
+
+            <a class="navbar-brand" href="#">
+              <div class="row">
+                <div class="col-12">
+                  <div class="row text-start">
+                    <span style="font-size: 28px; color: white;">GPS Location</span>
+                  </div>
+                  <div class="row text-start">
+                    <span style="font-size: 18px; color: white;">Device info: Samsung S22 Ultra</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <!-- <button class="navbar-toggler open-btn" type="button"><i class="bi bi-list"></i></button> -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <form class="d-flex searchSection" role="search">
+                  <input class="form-control text-white me-2 px-5 py-0" style="background: #403E5D; border: none;" type="search" placeholder="Search for data and reports" aria-label="Search">
+                </form>
+
+                <li class="nav-item" style="width: 62px; height: 62px; background: #403E5D; border-radius: 100%;"><a class="nav-link btn btn-outline-info text-center" style="border-radius: 100%;border: none;" href="#"><i class="bi bi-bell fs-2"></i></a></li>
+                <li class="nav-item mx-2" style="width: 62px; height: 62px; background: #403E5D; border-radius: 100%;"><a class="nav-link btn btn-outline-info  text-center" style="border-radius: 100%;border: none;" href="#"><i class="bi bi-chat-dots fs-2"></i></a></li>
+                <li class="nav-item" style="width: 62px; height: 62px; background: #403E5D; border-radius: 100%;"><a class="nav-link btn btn-outline-info  text-center" style="border-radius: 100%;border: none;" href="#"><i class="bi bi-envelope fs-2"></i></a></li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link active btn btn-outline-info py-2 px-2" style="border-radius: 3rem; border: 1px solid #9290aa;" href="#">
+                    <div class="row">
+                      <div class="col-4">
+                        <img src="../images/ultimatePhoneSpy/icons/icons set1/Ellipse 141.png" alt="" class="">
+                      </div>
+                      <div class="col-8">
+                        <div class="row text-start">
+                          <span style="font-weight: bold; font-size: 16px; color: white;">Etan Castro</span>
+                        </div>
+                        <div class="row text-start">
+                          <span style="font-weight: bold; font-size: 14px; color: white;">View Profile</span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <section class="">
+      <style>
+        .sideMenuText{
+          color: #bbbbbb;
+          font-size: 18px; 
+          text-decoration: none;
+          cursor: pointer;
+          font-weight: 400;
+        }
+        .sideMenuText:hover{
+          color: rgb(0, 0, 0);
+        }
+        .sideMenuText.active{
+          color: rgb(0, 0, 0);
+        }
+      </style>
+      <div class="container-fluid">
+        <div class="row py-5">
+
+<!-- SIDEBAR--------------------------------------------------------------------------------- -->
+          <div class="sideBar col-xl-3 col-lg-4 col-md-4 ps-0 nav__link hide">
+              <div class="side2" style="width: 100%; background: white; border-top-right-radius: 2rem;margin-top: -250px; ">
+                <div class="row">
+                  <div class="col-12 pt-xl-5 pt-0">
+                    <a class="p-5" href="" style="font-size: 32px; text-decoration: none;"></a>
+                  </div>
+                </div>
+  
+                <div class="row ps-5 pb-3"><div class="col-12 pt-5"><a class="sideMenuText" href="../index.html"><i class="bi bi-grid"></i> Dashboard</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href=""><i class="bi bi-tablet"></i> Device Info</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href="call_history.html"><i class="bi bi-telephone-outbound"></i> Call History</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href="sms_history.html"><i class="bi bi-chat-left-text"></i> SMS History</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href="address_book.html"><i class="bi bi-journal-medical"></i> Address Book</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText active" href="gps_location.html"><i class="bi bi-grid"></i> GPS Location</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href="ip_location.html"><i class="bi bi-clock"></i> IP Locations</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href="images.html"><i class="bi bi-image"></i> Images</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href="video_files.html"><i class="bi bi-tv"></i> Video Files</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href="audio_files.html"><i class="bi bi-music-note-beamed"></i> Audio Files</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href="documents.html"><i class="bi bi-file-earmark-medical"></i> Documents</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href="browser_history.html"><i class="bi bi-grid"></i> Browser History</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href="browser_bookmarks.html"><i class="bi bi-bookmark"></i> Browser Bookmarks</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href="telegram_messages.html"><i class="bi bi-chat"></i> Social Apps</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href="inistalled_applications.html"><i class="bi bi-grid"></i> Applications</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href="event_calender.html"><i class="bi bi-calendar"></i> Event Calendar</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href="wifi_network.html"><i class="bi bi-wifi"></i> Wifi Network</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href="key_logger.html"><i class="bi bi-key"></i> Key Logger</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href="clipboard_logs.html"><i class="bi bi-clipboard"></i> Clipboard Logs</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href="sim_changes.html"><i class="bi bi-sim"></i> Sim Changes</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href="account.html"><i class="bi bi-person"></i> Account</a></div></div>
+                <div class="row ps-5 pb-3"><div class="col-12 pt-3"><a class="sideMenuText" href="emails.html"><i class="bi bi-clock-history"></i> Email History</a></div></div>
+                <div class="row ps-5 pb-5"><div class="col-12 pt-3"><a class="sideMenuText" href="billing.html"><i class="bi bi-inboxes"></i> Data Export</a></div></div>
+  
+              </div>
+          </div>
+
+
+<!-- CONTENT--------------------------------------------------------------------------------- -->          
+<div class="content col-xl-9 col-lg-8 col-md-8 col-md-12">
+  <div class="row" style="margin-top: -150px;">
+
+    <div class="col-xl-12 col-lg-11 col-md-6 pb-4">
+      <div class="p-1" style="background: white; border-radius: 1rem;height: 560px;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117658.84846383004!2d89.46246060782333!3d22.845444785574262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ff9071cb47152f%3A0xf04b212290718952!2sKhulna!5e0!3m2!1sen!2sbd!4v1667488967779!5m2!1sen!2sbd" width="100%" height="100%" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+
+    <div class="col-xl-4 col-lg-11 col-md-6 pb-4">
+      <div class="py-5 px-4" style="background: white; border-radius: 1rem;">
+        <div class="row">
+          <div class="col-8">
+            <div class="row"><span style="color: #ADB0BE;font-size: 18px;">Network status</span></div>
+            <div class="row"><span style="color: #2C294B;font-size: 22px;font-weight: bold;">Mobile, Vpn</span></div>
+          </div>
+          <div class="col-4">
+            <img src="images/ultimatePhoneSpy/Mask Group 97.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 col-lg-11 col-md-6 pb-4">
+      <div class="py-5 px-4" style="background: white; border-radius: 1rem;">
+        <div class="row">
+          <div class="col-8">
+            <div class="row"><span style="color: #ADB0BE;font-size: 18px;">Location</span></div>
+            <div class="row"><span style="color: #2C294B;font-size: 22px;font-weight: bold;">GPS + Network</span></div>
+          </div>
+          <div class="col-4">
+            <img src="images/ultimatePhoneSpy/Mask Group 98.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 col-lg-11 col-md-6 pb-4">
+      <div class="py-5 px-4" style="background: white; border-radius: 1rem;">
+        <div class="row">
+          <div class="col-8">
+            <div class="row"><span style="color: #ADB0BE;font-size: 18px;">Device battery</span></div>
+            <div class="row"><span style="color: #2C294B;font-size: 22px;font-weight: bold;">49%</span></div>
+          </div>
+          <div class="col-4">
+            <img src="images/ultimatePhoneSpy/Mask Group 99.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-4 col-lg-11 col-md-6 pb-4">
+      <div class="py-5 px-4" style="background: white; border-radius: 1rem;">
+        <div class="row">
+          <div class="col-8">
+            <div class="row"><span style="color: #ADB0BE;font-size: 18px;">Last Update</span></div>
+            <div class="row"><span style="color: #2C294B;font-size: 22px;font-weight: bold;">24 Feb 2020</span></div>
+          </div>
+          <div class="col-4">
+            <img src="images/ultimatePhoneSpy/Mask Group 100.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 col-lg-11 col-md-6 pb-4">
+      <div class="py-5 px-4" style="background: white; border-radius: 1rem;">
+        <div class="row">
+          <div class="col-8">
+            <div class="row"><span style="color: #ADB0BE;font-size: 18px;">Plan</span></div>
+            <div class="row"><span style="color: #2C294B;font-size: 22px;font-weight: bold;">Premium</span></div>
+          </div>
+          <div class="col-4">
+            <img src="images/ultimatePhoneSpy/Mask Group 101.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 col-lg-11 col-md-6 pb-4">
+      <div class="py-5 px-4" style="background: white; border-radius: 1rem;">
+        <div class="row">
+          <div class="col-8">
+            <div class="row"><span style="color: #ADB0BE;font-size: 18px;">Expires on</span></div>
+            <div class="row"><span style="color: #2C294B;font-size: 22px;font-weight: bold;">11 Feb 2030</span></div>
+          </div>
+          <div class="col-4">
+            <img src="images/ultimatePhoneSpy/Mask Group 102.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+        </div>
+      </div>
+    </section>
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+    <script>
+      const menu = document.querySelector('.menu');
+      const navLink = document.querySelector('.nav__link');
+
+      menu.addEventListener('click', () => {
+        navLink.classList.toggle('hide');
+      });
+    </script>
+
+  </body>
+</html>
